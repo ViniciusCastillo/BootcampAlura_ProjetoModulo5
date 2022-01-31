@@ -24,7 +24,7 @@ Ao analisar esses dados identifiquei a necessidade de alguns tratamentos dos dad
     * dados_OHE utilizando o método  OneHotEncoder() do scikit-learn. 
 
 ### Testes para a criação do Pipeline
-Nesta parte eu testei alguns formatos, percebi por exemplo que fazer a eliminação das variáveis com alta correlação entre si (mantendo apenas uma delas), bem como retirar as que possuem baixa correlação com a variável alvo de UTI, antes de mais nada já melhorava as previsões.
+Nesta parte eu testei alguns tratamentos e percebi, por exemplo, que fazer a eliminação das variáveis com alta correlação entre si (mantendo apenas uma delas) logo no início, bem como retirar as que possuem baixa correlação com a variável alvo de UTI, já melhorava as previsões e reduzia o tempo de processamento.
 
 Após isso, normalmente colocar mais uma seleção de dados, utilizando o modelo SelectFromModel, também melhorava as estimativas. Sendo que aqui um dos testes também foi encontrar o melhor parâmetro para o threshold desse modelo.
 
