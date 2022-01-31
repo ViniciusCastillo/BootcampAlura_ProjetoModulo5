@@ -1,16 +1,12 @@
 # BootcampAlura_ProjetoModulo5
-## Previsão quais pacientes precissarão ser admitidos na UTI devido a Covid-19
+## Previsão de quais pacientes precissarão ser admitidos na UTI devido a Covid-19
 ![image](https://torresvedrasweb.pt/abc/uploads/2021/10/20200319-114657-covid192.jpg)
 
 Este projeto teve o objetivo de encontrar o modelo que melhor preve quem precisará de UTI com base nos dados no desafio do [Kaggle do Sírio Libanes](https://www.kaggle.com/S%C3%ADrio-Libanes/covid19). Conseguir prever com antecedência é muito importante, por isso o foco foi conseguir ter uma boa previsibilidade logo no primeiro atendimento, com base nas medições da primeira janela horária do paciente no hospital.
 
-Testei alguns modelos de Regressão Logística, Random Forest e ..... Também testei qual seria o melhor filtro na seleção de dados, bem como a melhor forma de reescalar os dados.
+Testei 2 modelos de Regressão Logística e Random Forest que tiveram perfomances parecidas, porém o Random Forest ficou um pouco a frente. Sendo que o ponto mais relevante foi a seleção das variáveis, tanto que no pipeline final foram utilizados duas seleções de variáveis de forma sequencial para melhorar os resultados.
 
-**Após diversos teste, vou recomendar o modelo que obteve os resultados abaixo:**
-
-AUC (Area Under the Curve) da curva ROC (Receiver Operating Characteristic). Uma acurácia de .... e um FPR de ....
-
-Agora irei detalhar um pouco mais como cheguei nesse modelo.
+Os testes e avaliações e conclusões podem ser vistas [neste notebook](https://github.com/ViniciusCastillo/BootcampAlura_ProjetoModulo5/blob/main/Notebooks/Seleciona_Modelo.ipynb), porém recomendo ler o resto deste Readme antes.
 
 ### Tratamento de dados
 Os dados utilizados foram os disponibilizados no desafio do [Kaggle do Sírio Libanes](https://www.kaggle.com/S%C3%ADrio-Libanes/covid19). 
@@ -33,7 +29,9 @@ Após isso, normalmente colocar mais uma seleção de dados, utilizando o modelo
 
 Outo teste interezande foi se era necessário reescalar os números. Logo de cara eu desonsiderei a função Normalizer por ser evidente que piorava os indicadores,desta forma o teste ficou entre não fazer nada (a base de certa forma já estava ajustada) ou utilizar o modelo StandardScaler.
 
-Por fim o modelo a ser utilizado, testei tanto o Logistic Regression quanto o Random Forest, sendo que em ambos qual a parametrização que melhorava o resultado.
+Por fim o modelo a ser utilizado, testei tanto o Logistic Regression quanto o Random Forest, sendo que em ambos qual a parametrização que melhorava o resultado. No caso do Random Forest o tempo de processamento foi um entrave que limitou um pouco os testes dos parametros.
+
+Um tratamento adicional ocorre quando queremos trabalhar com a janela seguinte (2-4 horas). Neste caso incluimos os dados das features continuas da janela anterior, bem como a variação dessas mesmas features entre janelas.
 
 ### Contrução do Pipeline
 Com o resultado dos testes eu crio o pipeline de melhor perfomance, sendo que considerei o limite inferior do intervalo de confiança de 95% (media - 2 desvios padrões) do ROC AUC como referência.
@@ -42,20 +40,16 @@ Com o pipeline criado rodo para uma amostra de teste aleatória os resultados pa
 [Aqui você pode encontrar os arquivos criados]().
 
 ### Conclusões
-Esses testes todos foram feitos tanto na janela de 0-2 quanto na janela de 2-4. 
+Esses testes todos foram feitos tanto na janela de 0-2 quanto na janela de 2-4. Sendo que na janela de 0-2 horas o melhor modelo do regressão logística e do random forest ficaram com resultados iguais, impossibilitando a definição de um deles.
 
-O melhor modelo da janela de 0-2 foi o ....
+Como na janela de 2-4 o melhor foi o random forest, talvez o melhor seria seguir com ele para todas as janelas, mas valeria acompanhar com ambos. (Os modelos finais estão salvos [aqui](https://github.com/ViniciusCastillo/BootcampAlura_ProjetoModulo5/tree/main/modelos))
 
-Já na janela de 2-4 foi....
+No arquivo da seleção dos modelos temos a lista dos campos selecionados, deixei lá mais por curiosidade de quais características podem influenciar na internação segundo cada modelo. Sendo que na janela de 2-4, os campos criados com a variação das features entre janelas tem uma participação importante em ambos, o que eu já imaginava que iria acontecer, por isso que foram criados.
 
-As colunas utilizadas foram....
-
-### Próximos passos
-Acredito que seria possível testar outros modelos de classificação, dado que só utilizei 2 nos meus testes.
-
-Além disso, na parametrização do modelo acabei utilizando um métrica diferente da comparação dos pipelines, teria que fazer alguns ajustes nos códigos para que ela também fosse utilizada na parte de parametrização, deixando de ser o valor médio e sim o valor inferiro do intervalo de confiança.
-
-Outro ponto que poderia ser melhorado é na hora de retirar as variáveis que tem alta correlação entre si, o certo era manter a que tem maior correlação com a variável y e atualmente está escolhendo conforme a ordem das colunas.
+Acredito que os modelos estão bons, mas talvez com mais alguns testes poderíamos encontrar modelos melhores, as sugestões de próximos passos seriam:
+* Testar outros modelos de classificação, dado que só utilizei 2 nos meus testes.*
+* Na parametrização do modelo acabei utilizando uma métrica diferente da utilizada na comparação dos pipelines, teria que fazer alguns ajustes nos códigos para que ela também fosse utilizada na parte de parametrização, deixando de ser o valor médio e sim o valor inferiro do intervalo de confiança.
+* Outro ponto que poderia ser melhorado é na hora de retirar as variáveis que tem alta correlação entre si, o certo era manter a que tem maior correlação com a variável y e atualmente está escolhendo conforme a ordem das colunas.
 
 Acredito que esses são os principais pontos e até uma próxima!
 
