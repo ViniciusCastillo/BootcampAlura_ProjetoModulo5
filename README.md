@@ -45,7 +45,7 @@ Esses testes todos foram feitos tanto na janela de 0-2 quanto na janela de 2-4. 
 
 Como na janela de 2-4 o melhor foi o Random Forest, talvez o melhor seria seguir com ele para todas as janelas, mas valeria acompanhar ambos, dado os resultados próximos.
 
-No arquivo da seleção dos modelos temos a lista dos campos selecionados, deixei lá mais por curiosidade de quais características podem influenciar na internação segundo cada modelo. Sendo que na janela de 2-4, os campos criados com a variação das features entre janelas tem uma participação importante em ambos, o que eu já imaginava que iria acontecer, por isso que foram criados.
+No arquivo da seleção dos modelos temos a lista dos campos selecionados, deixei lá mais por curiosidade de quais características podem influenciar na internação segundo cada modelo. Sendo que na janela de 2-4, os campos criados com a variação das features entre janelas tem uma participação importante em ambos, o que eu já imaginava, dado que a mudança nos indicadores que normalmente irá indicar uma piora ou melhora no quadro do paciente.
 
 Acredito que os modelos estão bons, mas talvez com mais alguns testes poderíamos encontrar modelos melhores, as sugestões de próximos passos seriam:
 * Testar outros modelos de classificação, dado que só utilizei 2 nos meus testes.
