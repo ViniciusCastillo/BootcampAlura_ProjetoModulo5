@@ -23,6 +23,8 @@ Ao analisar esses dados identifiquei a necessidade de alguns tratamentos dos dad
     * dados_LE utilizando o método  LabelEncoder() do scikit-learn. 
     * dados_OHE utilizando o método  OneHotEncoder() do scikit-learn. 
 
+Um tratamento adicional ocorre quando queremos trabalhar com a janela seguinte (2-4 horas). Neste caso incluímos os dados das features contínuas da janela anterior, bem como a variação dessas mesmas features entre janelas.
+
 ### Testes para a criação do Pipeline
 Nesta parte eu testei alguns tratamentos e percebi, por exemplo, que fazer a eliminação das variáveis com alta correlação entre si (mantendo apenas uma delas) logo no início, bem como retirar as que possuem baixa correlação com a variável alvo de UTI, já melhorava as previsões e reduzia o tempo de processamento.
 
@@ -31,8 +33,6 @@ Após isso, normalmente colocar mais uma seleção de dados, utilizando o modelo
 Outo teste interessande foi se era necessário reescalar os números. Logo de cara eu desconsiderei a função Normalizer por ser evidente que piorava os indicadores, desta forma o teste ficou entre não fazer nada (a base de certa forma já estava ajustada) ou utilizar o modelo StandardScaler.
 
 Por fim o modelo a ser utilizado, testei tanto o Logistic Regression quanto o Random Forest, sendo que em ambos qual a parametrização que melhorava o resultado. No caso do Random Forest o tempo de processamento foi um entrave que limitou um pouco os testes dos parâmetros.
-
-Um tratamento adicional ocorre quando queremos trabalhar com a janela seguinte (2-4 horas). Neste caso incluímos os dados das features contínuas da janela anterior, bem como a variação dessas mesmas features entre janelas.
 
 ### Construção do Pipeline
 Com o resultado dos testes eu crio o pipeline de melhor performance, sendo que considerei o limite inferior do intervalo de confiança de 95% (media - 2 desvios padrões) do ROC AUC como referência.
