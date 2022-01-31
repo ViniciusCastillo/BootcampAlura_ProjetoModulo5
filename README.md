@@ -5,7 +5,7 @@
 
 Este projeto teve o objetivo de encontrar o modelo que melhor prevê quem precisará de UTI com base nos dados no desafio do [Kaggle do Sírio Libanes](https://www.kaggle.com/S%C3%ADrio-Libanes/covid19). Conseguir prever com antecedência é muito importante, por isso o foco foi conseguir ter uma boa previsibilidade logo no primeiro atendimento, com base nas medições da primeira janela horária do paciente no hospital, bem como na segunda janela horária.
 
-Testei 2 modelos de Regressão Logística e Random Forest que tiveram performances parecidas, porém o Random Forest ficou um pouco a frente. Sendo que o ponto mais relevante foi a seleção das variáveis, tanto que no pipeline final foram utilizadas duas seleções de variáveis de forma sequencial para melhorar os resultados.
+Testei 2 modelos para fazer a classificação, o de Regressão Logística e o Random Forest que tiveram performances parecidas, porém o Random Forest ficou um pouco a frente. Sendo que o ponto mais relevante foi a seleção das variáveis, tanto que no pipeline final foram utilizadas duas seleções de variáveis de forma sequencial para melhorar os resultados.
 
 Os testes e avaliações e conclusões podem ser vistos [neste notebook](https://github.com/ViniciusCastillo/BootcampAlura_ProjetoModulo5/blob/main/Notebooks/Seleciona_Modelo.ipynb), porém recomendo ler o resto deste Readme antes.
 
