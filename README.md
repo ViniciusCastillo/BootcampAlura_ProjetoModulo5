@@ -35,7 +35,7 @@ Outo teste interessande foi se era necessário reescalar os números. Logo de ca
 Por fim o modelo a ser utilizado, testei tanto o Logistic Regression quanto o Random Forest, sendo que em ambos qual a parametrização que melhorava o resultado. No caso do Random Forest o tempo de processamento foi um entrave que limitou um pouco os testes dos parâmetros.
 
 ### Construção do Pipeline
-Com o resultado dos testes eu crio o pipeline de melhor performance, sendo que considerei o limite inferior do intervalo de confiança de 95% (media - 2 desvios padrões) do ROC AUC como referência.
+Dado o resultado dos testes eu crio o pipeline de melhor performance, sendo que considerei o limite inferior do intervalo de confiança de 95% (media - 2 desvios padrões) do ROC AUC como referência.
 
 Com o pipeline criado rodo para uma amostra de teste aleatória os resultados para ter uma referência do resultado. Fora isso, podemos salvar o modelo em um arquivo.
 [Aqui você pode encontrar os arquivos criados]().
