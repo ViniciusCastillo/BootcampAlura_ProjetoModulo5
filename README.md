@@ -2,6 +2,7 @@
 ## Previsão de quais pacientes precisarão ser admitidos na UTI devido a Covid-19
 ![image](https://torresvedrasweb.pt/abc/uploads/2021/10/20200319-114657-covid192.jpg)
 
+
 Este projeto teve o objetivo de encontrar o modelo que melhor prevê quem precisará de UTI com base nos dados no desafio do [Kaggle do Sírio Libanes](https://www.kaggle.com/S%C3%ADrio-Libanes/covid19). Conseguir prever com antecedência é muito importante, por isso o foco foi conseguir ter uma boa previsibilidade logo no primeiro atendimento, com base nas medições da primeira janela horária do paciente no hospital.
 
 Testei 2 modelos de Regressão Logística e Random Forest que tiveram performances parecidas, porém o Random Forest ficou um pouco a frente. Sendo que o ponto mais relevante foi a seleção das variáveis, tanto que no pipeline final foram utilizadas duas seleções de variáveis de forma sequencial para melhorar os resultados.
