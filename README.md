@@ -7,7 +7,7 @@ Este projeto teve o objetivo de encontrar o modelo que melhor prevê quem precis
 
 Testei 2 modelos para fazer a classificação, o de Regressão Logística e o Random Forest que tiveram performances parecidas, porém o Random Forest ficou um pouco a frente. Sendo que o ponto mais relevante foi a seleção das variáveis, tanto que no pipeline final foram utilizadas duas seleções de variáveis de forma sequencial para melhorar os resultados.
 
-Os testes e avaliações e conclusões podem ser vistos [neste notebook](https://github.com/ViniciusCastillo/BootcampAlura_ProjetoModulo5/blob/main/Notebooks/Seleciona_Modelo.ipynb), porém recomendo ler o resto deste Readme antes.
+Os testes, avaliações e conclusões podem ser vistos [neste notebook](https://github.com/ViniciusCastillo/BootcampAlura_ProjetoModulo5/blob/main/Notebooks/Seleciona_Modelo.ipynb), mas recomendo ler o resto deste Readme antes.
 
 ### Tratamento de dados
 Os dados utilizados foram os disponibilizados no desafio do [Kaggle do Sírio Libanes](https://www.kaggle.com/S%C3%ADrio-Libanes/covid19). 
