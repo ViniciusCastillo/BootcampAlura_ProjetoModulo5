@@ -43,7 +43,7 @@ Com o pipeline criado rodo para uma amostra de teste aleatória os resultados pa
 ### Conclusões
 Esses testes todos foram feitos tanto na janela de 0-2 quanto na janela de 2-4. Sendo que na janela de 0-2 horas o melhor modelo de Regressão Logística e do Random Forest ficaram com resultados iguais, impossibilitando a definição de um deles.
 
-Como na janela de 2-4 o melhor foi o random forest, talvez o melhor seria seguir com ele para todas as janelas, mas valeria acompanhar com ambos. (Os modelos finais estão salvos [aqui](https://github.com/ViniciusCastillo/BootcampAlura_ProjetoModulo5/tree/main/modelos))
+Como na janela de 2-4 o melhor foi o Random Forest, talvez o melhor seria seguir com ele para todas as janelas, mas valeria acompanhar ambos, dado os resultados próximos.
 
 No arquivo da seleção dos modelos temos a lista dos campos selecionados, deixei lá mais por curiosidade de quais características podem influenciar na internação segundo cada modelo. Sendo que na janela de 2-4, os campos criados com a variação das features entre janelas tem uma participação importante em ambos, o que eu já imaginava que iria acontecer, por isso que foram criados.
 
