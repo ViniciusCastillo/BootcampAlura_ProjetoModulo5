@@ -61,5 +61,7 @@ Acredito que esses são os principais pontos e até uma próxima!
 
 ### Principais Referências
 [Bootcamp Alura](https://bootcamps.alura.com.br/)
+
 [scikit-learn user guide](https://scikit-learn.org/stable/user_guide.html)
+
 [Implementando um Modelo de Classificação no Scikit-Learn](https://tatianaesc.medium.com/implementando-um-modelo-de-classifica%C3%A7%C3%A3o-no-scikit-learn-6206d684b377) - Tatiana Escovedo
