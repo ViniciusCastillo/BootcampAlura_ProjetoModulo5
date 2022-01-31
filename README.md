@@ -47,7 +47,7 @@ Como na janela de 2-4 o melhor foi o Random Forest, talvez o melhor seria seguir
 
 No arquivo da seleção dos modelos temos a lista dos campos selecionados, deixei lá mais por curiosidade de quais características podem influenciar na internação segundo cada modelo. Sendo que na janela de 2-4, os campos criados com a variação das features entre janelas tem uma participação importante em ambos, o que eu já imaginava, dado que a mudança nos exames é o que normalmente indica uma piora ou melhora no quadro do paciente.
 
-Acredito que os modelos estão bons, mas talvez com mais alguns testes poderíamos encontrar modelos melhores, as sugestões de próximos passos seriam:
+Acredito que os modelos estão bons, mas talvez com mais alguns testes poderíamos encontrar modelos melhores. Com isso, as sugestões de próximos passos seriam:
 * Testar outros modelos de classificação, dado que só utilizei 2 nos meus testes.
 * Na parametrização do modelo acabei utilizando uma métrica diferente da utilizada na comparação dos pipelines, teria que fazer alguns ajustes nos códigos para que ela também fosse utilizada na parte de parametrização, deixando de ser o valor médio e sim o valor inferior do intervalo de confiança.
 * Outro ponto que poderia ser melhorado é na hora de retirar as variáveis que tem alta correlação entre si, o certo era manter a que tem maior correlação com a variável y e atualmente está escolhendo conforme a ordem das colunas.
