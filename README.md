@@ -16,7 +16,14 @@ Agora irei detalhar um pouco mais como cheguei nesse modelo.
 Os dados utilizados foram os disponibilizados no desafio do [Kaggle do Sírio Libanes](https://www.kaggle.com/S%C3%ADrio-Libanes/covid19). 
 
 Ao analisar esses dados identifiquei a necessidade de alguns tratamentos dos dados:
-1. Existe um campo demográfico 
+
+* Retirar as linhas com marcação de UTI = 1
+* Remarcar a coluna ICU (UTI em inglês), com a informação se o paciente visitante (PATIENT_VISIT_IDENTIFIER) chegou na UTI, independente da janela (campo WINDOW).
+* Tratando os dados que não estão disponíveis com base na medição anterior ou posterior. 
+  * Caso ainda sobre dados indisponível, as linhas onde eles estão serão excluídas. 
+  * Isso se o limite de 10% da base for atendido, caso contrário irá informar o problema e não excluirá os dados.
+
+1. Existe um campo demográfico 'AGE PERCENTIL' que está em formato de tex
 
 Como a função Normalizer tinha resultados piores em todos os modelos, eu desconsiderei ela nos testes apresentados
 
