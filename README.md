@@ -16,7 +16,7 @@ Ao analisar esses dados identifiquei a necessidade de alguns tratamentos dos dad
 * Retirar as linhas com marcação de UTI = 1
 * Remarcar a coluna ICU (UTI em inglês), com a informação se o paciente visitante (PATIENT_VISIT_IDENTIFIER) chegou na UTI, independente da janela (campo WINDOW)
 * Tratando os dados que não estão disponíveis com base na medição anterior ou posterior
-  * Caso ainda sobre dados indisponível, as linhas serão excluídas
+  * Caso ainda sobre valores indisponíveis, as linhas serão excluídas
 * Remover as colunas que tem o mesmo valor em todas as linhas da base
 * Transformar o campo demográfico 'AGE PERCENTIL' que está em formato de texto
   * Aqui trabalhei com 2 formas diferentes e criei 2 bases para testes:
